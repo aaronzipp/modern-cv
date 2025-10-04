@@ -270,7 +270,7 @@
   set heading(numbering: none, outlined: false)
 
   show heading.where(level: 1): it => [
-    #set text(size: 16pt, weight: "regular")
+    #set text(size: 14pt, weight: "regular")
     #set align(left)
     #set block(above: 1em)
     #let color = if colored-headers {
@@ -283,7 +283,7 @@
   ]
 
   show heading.where(level: 2): it => {
-    set text(color-darkgray, size: 12pt, style: "normal", weight: "bold")
+    set text(color-darkgray, size: 11pt, style: "normal", weight: "bold")
     it.body
   }
 
