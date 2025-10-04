@@ -189,6 +189,7 @@
 /// - date (string): The date the resume was created
 /// - accent-color (color): The accent color of the resume
 /// - colored-headers (boolean): Whether the headers should be colored or not
+/// - colored-name (boolean): Whether the name should be colored or not
 /// - language (string): The language of the resume, defaults to "en". See lang.toml for available languages
 /// - use-smallcaps (boolean): Whether to use small caps formatting throughout the template
 /// - show-address-icon (boolean): Whether to show the address icon
@@ -202,6 +203,7 @@
   date: datetime.today().display("[month repr:long] [day], [year]"),
   accent-color: default-accent-color,
   colored-headers: true,
+  colored-name: true,
   show-footer: true,
   language: "en",
   font: ("Source Sans Pro", "Source Sans 3"),
@@ -290,17 +292,19 @@
     __apply_smallcaps(it.body, use-smallcaps)
   }
 
+  let name-color = if colored-name { accent-color } else { color-darkgray }
+
   let name = {
     align(center)[
       #pad(bottom: 5pt)[
         #block[
           #set text(size: 32pt, style: "normal", font: header-font)
           #if language == "zh" or language == "ja" [
-            #text(accent-color, weight: "bold")[#author.lastname]#text(
+            #text(name-color, weight: "bold")[#author.lastname]#text(
               weight: "thin",
             )[#author.firstname]
           ] else [
-            #text(accent-color, weight: "thin")[#author.firstname]
+            #text(name-color, weight: "thin")[#author.firstname]
             #text(weight: "bold")[#author.lastname]
           ]
         ]
@@ -603,6 +607,7 @@
 /// - profile-picture (image): The profile picture of the author. This will be cropped to a circle and should be square in nature.
 /// - date (datetime): The date the cover letter was created. This will default to the current date.
 /// - accent-color (color): The accent color of the cover letter
+/// - colored-name (boolean): Whether the name should be colored or not
 /// - language (string): The language of the cover letter, defaults to "en". See lang.toml for available languages
 /// - font (array): The font families of the cover letter
 /// - header-font (array): The font families of the cover letter header
@@ -618,6 +623,7 @@
   profile-picture: image,
   date: datetime.today().display("[month repr:long] [day], [year]"),
   accent-color: default-accent-color,
+  colored-name: true,
   language: "en",
   font: ("Source Sans Pro", "Source Sans 3"),
   header-font: "Roboto",
@@ -702,17 +708,19 @@
     ]
   ]
 
+  let name-color = if colored-name { accent-color } else { color-darkgray }
+
   let name = {
     align(right)[
       #pad(bottom: 5pt)[
         #block[
           #set text(size: 32pt, style: "normal", font: header-font)
           #if language == "zh" or language == "ja" [
-            #text(accent-color, weight: "bold")[#author.lastname]#text(
+            #text(name-color, weight: "bold")[#author.lastname]#text(
               weight: "bold",
             )[#author.firstname]
           ] else [
-            #text(accent-color, weight: "thin")[#author.firstname]
+            #text(name-color, weight: "thin")[#author.firstname]
             #text(weight: "bold")[#author.lastname]
           ]
 
