@@ -312,7 +312,7 @@
     ]
   }
 
-  let positions = {
+  let positions = if author.positions != none {
     set text(accent-color, size: 9pt, weight: "regular")
     align(center)[
       #__apply_smallcaps(
@@ -320,6 +320,8 @@
         use-smallcaps,
       )
     ]
+  } else {
+    []
   }
 
   let address = {
@@ -729,7 +731,7 @@
     ]
   }
 
-  let positions = {
+  let positions = if author.positions != none {
     set text(accent-color, size: 9pt, weight: "regular")
     align(right)[
       #__apply_smallcaps(
@@ -737,6 +739,8 @@
         use-smallcaps,
       )
     ]
+  } else {
+    []
   }
 
   let address = {
