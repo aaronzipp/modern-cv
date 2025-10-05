@@ -439,33 +439,22 @@
     ]
   }
 
+  name
+  positions
+  address
+  contacts
+
   if profile-picture != none {
-    grid(
-      columns: (100% - 4cm, 4cm),
-      rows: 100pt,
-      gutter: 10pt,
-      [
-        #name
-        #positions
-        #address
-        #contacts
-      ],
-      align(left + horizon)[
-        #block(
-          clip: true,
-          stroke: 0pt,
-          radius: 2cm,
-          width: 4cm,
-          height: 4cm,
-          profile-picture,
-        )
-      ],
-    )
-  } else {
-    name
-    positions
-    address
-    contacts
+    place(top + right, dx: 0mm, dy: -5mm)[
+      #block(
+        clip: true,
+        stroke: 0pt,
+        radius: 1.5cm,
+        width: 3cm,
+        height: 3cm,
+        profile-picture,
+      )
+    ]
   }
 
   body
