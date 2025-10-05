@@ -288,8 +288,8 @@
   }
 
   show heading.where(level: 3): it => {
-    set text(size: 10pt, weight: "regular")
-    __apply_smallcaps(it.body, use-smallcaps)
+    set text(font: header-font, size: 10pt, weight: "regular")
+    it.body
   }
 
   let name-color = if colored-name { accent-color } else { color-darkgray }
