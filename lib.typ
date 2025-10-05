@@ -20,12 +20,12 @@
 #let twitter-icon = box(fa-icon("twitter", fill: color-darknight))
 #let google-scholar-icon = box(fa-icon("google-scholar", fill: color-darknight))
 #let orcid-icon = box(fa-icon("orcid", fill: color-darknight))
-#let phone-icon = box(fa-icon("square-phone", fill: color-darknight))
+#let phone-icon = box(fa-icon("phone", fill: color-darknight))
 #let email-icon = box(fa-icon("envelope", fill: color-darknight))
-#let birth-icon = box(fa-icon("cake", fill: color-darknight))
+#let birth-icon = box(fa-icon("calendar-days", fill: color-darknight))
 #let homepage-icon = box(fa-icon("home", fill: color-darknight))
 #let website-icon = box(fa-icon("globe", fill: color-darknight))
-#let address-icon = box(fa-icon("location-crosshairs", fill: color-darknight))
+#let address-icon = box(fa-icon("location-dot", fill: color-darknight))
 
 /// Helpers
 
